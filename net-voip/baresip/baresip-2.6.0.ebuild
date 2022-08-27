@@ -4,7 +4,7 @@
 EAPI=7
 DESCRIPTION="Baresip is a modular SIP User-Agent with audio and video support"
 HOMEPAGE="https://github.com/baresip"
-SRC_URI="https://github.com/baresip/baresip/archive/refs/tags/v2.6.0.tar.gz"
+SRC_URI="https://github.com/baresip/baresip/archive/refs/tags/v2.6.0.tar.gz -> baresip-2.6.0.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

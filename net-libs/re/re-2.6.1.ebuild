@@ -4,7 +4,7 @@
 EAPI=7
 DESCRIPTION="Generic library for real-time communications with async IO support"
 HOMEPAGE="https://github.com/baresip"
-SRC_URI="https://github.com/baresip/re/archive/refs/tags/v2.6.1.tar.gz"
+SRC_URI="https://github.com/baresip/re/archive/refs/tags/v2.6.1.tar.gz -> libre-2.6.1.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
