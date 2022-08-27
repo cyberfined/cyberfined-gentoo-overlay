@@ -32,6 +32,10 @@ DEPEND="${RDEPEND}"
 
 src_unpack() {
 	cargo_src_unpack
+	echo "$WORKDIR"
+	ls -la "$WORKDIR"
+
+
 	mv "$WORKDIR/account-switcher-0.1.1/baresip-account-switcher-0.1.1" "$WORKDIR/account-switcher-0.1.1_"
 	rmdir "$WORKDIR/account-switcher-0.1.1"
 	mv "$WORKDIR/account-switcher-0.1.1_" "$WORKDIR/account-switcher-0.1.1"
