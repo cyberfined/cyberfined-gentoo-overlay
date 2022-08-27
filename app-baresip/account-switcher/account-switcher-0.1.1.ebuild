@@ -17,7 +17,10 @@ inherit cargo
 
 DESCRIPTION="Baresip module for switching accounts"
 HOMEPAGE="https://github.com/cyberfined/baresip-account-switcher"
-SRC_URI="https://github.com/cyberfined/baresip-account-switcher/archive/refs/tags/0.1.1.tar.gz -> baresip-account-switcher-0.1.1.tar.gz"
+SRC_URI="
+https://github.com/cyberfined/baresip-account-switcher/archive/refs/tags/0.1.1.tar.gz -> baresip-account-switcher-0.1.1.tar.gz
+$(cargo_crate_uris ${CRATES})
+"
 
 LICENSE="WTFPL"
 SLOT="0"
@@ -28,10 +31,8 @@ BDEPEND="virtual/rust"
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	unpack "${A}"
+	cargo_src_unpack
 	mv "baresip-account-switcher-0.1.1" "account-switcher-0.1.1"
-	mkdir -p "${ECARGO_VENDOR}" || die
-	cargo_gen_config
 }
 
 src_install() {
