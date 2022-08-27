@@ -13,7 +13,17 @@ KEYWORDS="~amd64"
 RDEPEND="sys-libs/zlib dev-libs/openssl"
 DEPEND="${RDEPEND}"
 
+src_build() {
+	emake RELEASE=1
+}
+
 src_install() {
-	emake DESTDIR="${D}" LIBDIR=/usr/lib64 install
-	einstalldocs
+	local bits="$((get_conf LONG_BIT))"
+	local libdir=""
+	if [[ "$bits" -eq 64 ]]; then
+		libdir="/usr/lib64"
+	else
+		libdir="/usr/lib"
+	fi
+	emake DESTDIR="${D}" LIBDIR="${libdir}" RELEASE=1 install
 }
