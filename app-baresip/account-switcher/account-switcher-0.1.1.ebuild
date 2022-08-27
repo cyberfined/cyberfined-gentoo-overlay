@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}"
 
 src_unpack() {
 	cargo_src_unpack
-	mv "baresip-account-switcher-0.1.1" "account-switcher-0.1.1"
+	mv "$WORKDIR/baresip-account-switcher-0.1.1" "$WORKDIR/account-switcher-0.1.1"
 }
 
 src_install() {
