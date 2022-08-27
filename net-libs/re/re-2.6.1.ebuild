@@ -13,9 +13,7 @@ KEYWORDS="~amd64"
 RDEPEND="sys-libs/zlib dev-libs/openssl"
 DEPEND="${RDEPEND}"
 
-src_unpack() {
-	if [[ -n ${A} ]]; then
-		unpack ${A}
-		mv "re-2.6.1" "libre-2.6.1"
-	fi
+src_install() {
+	emake DESTDIR="${D}" LIBDIR=/usr/lib64 install
+	einstalldocs
 }
