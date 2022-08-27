@@ -14,6 +14,11 @@ RDEPEND="net-voip/baresip"
 BDEPEND="virtual/rust"
 DEPEND="${RDEPEND}"
 
+src_unpack() {
+	unpack "${A}"
+	mv "baresip-account-switcher-0.1.1" "account-switcher-0.1.1"
+}
+
 src_compile() {
 	cargo build --release
 }
