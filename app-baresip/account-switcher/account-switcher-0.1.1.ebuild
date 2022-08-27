@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}"
 src_unpack() {
 	unpack "${A}"
 	mv "baresip-account-switcher-0.1.1" "account-switcher-0.1.1"
+	mkdir -p "${ECARGO_VENDOR}" || die
 	cargo_gen_config
 }
 
