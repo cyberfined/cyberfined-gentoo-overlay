@@ -18,7 +18,7 @@ src_build() {
 }
 
 src_install() {
-	local bits="$((getconf LONG_BIT))"
+	local bits="$(getconf LONG_BIT)"
 	local libdir=""
 	if [[ "$bits" -eq 64 ]]; then
 		libdir="/usr/lib64"
